@@ -8,7 +8,7 @@
 
 def formatName(firstName, lastName):
     # Add your code here
-    pass
+    return f"{lastName.capitalize()}, {firstName.capitalize()}"
 
 
 # Task 2:
@@ -20,7 +20,7 @@ def formatName(firstName, lastName):
 
 def formatInitials(firstName, lastName):
     # Add your code here
-    pass
+    return f"{firstName[0].upper()}.{lastName[0].upper()}."
 
 
 # Task 3:
@@ -31,3 +31,45 @@ def formatInitials(firstName, lastName):
 #   formatInitials("bob","lim")   → Expected: "B.L."
 
 # Add your code here
+print(formatName("Alice", "Tan"))       # Expected: Tan, Alice
+print(formatName("bob", "lim"))         # Expected: Lim, Bob
+print(formatInitials("Alice", "Tan"))   # Expected: A.T.
+print(formatInitials("bob", "lim"))     # Expected: B.L.
+
+"""
+def run_tests():
+    passed = 0
+    failed = 0
+
+    def check(label, initial, result, expected):
+        nonlocal passed, failed
+        status = "PASS" if result == expected else "FAIL"
+        print(f"  Initial  : {initial}")
+        print(f"  Result   : {result}")
+        print(f"  Expected : {expected}")
+        print(f"  [{status}] {label}")
+        print()
+        if status == "PASS":
+            passed += 1
+        else:
+            failed += 1
+
+    # --- formatName tests ---
+    check("formatName standard case",
+          ("Alice", "Tan"), formatName("Alice", "Tan"), "Tan, Alice")
+
+    check("formatName lowercase input",
+          ("bob", "lim"), formatName("bob", "lim"), "Lim, Bob")
+
+    # --- formatInitials tests ---
+    check("formatInitials standard case",
+          ("Alice", "Tan"), formatInitials("Alice", "Tan"), "A.T.")
+
+    check("formatInitials lowercase input",
+          ("bob", "lim"), formatInitials("bob", "lim"), "B.L.")
+
+    print(f"{passed}/{passed + failed} tests passed.")
+
+
+run_tests()
+"""
